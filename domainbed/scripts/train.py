@@ -177,10 +177,7 @@ if __name__ == "__main__":
             print(matcher_hparams)
             hparams['topk'] = matcher_hparams['topk']
             if args.dataset not in ['RotatedMNIST', 'ColoredMNIST', 'ColoredMNIST_10class']:
-                if hparams['propensity_score']:
-                    cf_ids = matcher_checkpoint["cf_ids_ps"]
-                else:
-                    cf_ids = matcher_checkpoint["cf_ids"]
+                cf_ids = matcher_checkpoint["cf_ids_ps"]
                 in_splits_match = [(utils.CFmatchWrapper(d, cf_ids[i], 
                                     use_raw_index=True, num_cf=args.num_cf), w) 
                                     for i, (d, w) in enumerate(train_only_in_split)]

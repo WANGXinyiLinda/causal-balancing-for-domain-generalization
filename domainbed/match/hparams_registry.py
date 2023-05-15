@@ -73,6 +73,8 @@ def _hparams(algorithm, dataset, random_seed):
     else:
         _hparam('latent_size', 64, lambda r: 64)
 
+    return hparams
+
 def default_hparams(algorithm, dataset):
     return {a: b for a, (b, c) in _hparams(algorithm, dataset, 0).items()}
 
