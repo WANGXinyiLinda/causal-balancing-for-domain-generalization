@@ -300,10 +300,9 @@ if __name__ == "__main__":
 
         train_match, _ = utils.wrap_datasets(train_datasets, algorithm, 
                             dataset.num_classes, batch_size=hparams['batch_size'], 
-                            match_env=True, dist_func=hparams['distance_func'], 
+                            dist_func=hparams['distance_func'], 
                             device=device, use_raw_index=True, threshold=False,
-                            topk=hparams['topk'], 
-                            use_propensity_score=True)
+                            topk=hparams['topk'])
         print("match time: ", time.time() - match_start_time)
         cf_ids_ps = [d.cf_ids for d, w in train_match]
 
