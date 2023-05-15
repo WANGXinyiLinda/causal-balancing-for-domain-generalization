@@ -83,13 +83,21 @@ We report **train domain validation** results in our paper.
 
 ------
 
+## 4. Add new datasets
+
+You can add your own dataset by implementing a subclass of `MultipleDomainDataset` in `domainbed/datasets.py` to load your dataset. You will be able to use your dataset by providing the dataset class name to the `--dataset` argument. The core algorithm of causal matching is in `domainbed/match`. You can also transfer the algorithm to your own codebase.
+
+------
+
 ## Citation
 
 ```
-@article{wang2022causal,
-  title={Causal Balancing for Domain Generalization},
-  author={Wang, Xinyi and Saxon, Michael and Li, Jiachen and Zhang, Hongyang and Zhang, Kun and Wang, William Yang},
-  journal={arXiv preprint arXiv:2206.05263},
-  year={2022}
+@inproceedings{
+wang2023causal,
+title={Causal Balancing for Domain Generalization},
+author={Xinyi Wang and Michael Saxon and Jiachen Li and Hongyang Zhang and Kun Zhang and William Yang Wang},
+booktitle={The Eleventh International Conference on Learning Representations },
+year={2023},
+url={https://openreview.net/forum?id=F91SROvVJ_6}
 }
 ```
