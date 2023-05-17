@@ -224,10 +224,7 @@ class CFmatchWrapper:
                 cf_id = self.cf_ids[index][c]
 
                 if len(cf_id) > 0:
-                    if self.oracle:
-                        _cf_id = random.sample(cf_id, 1)[0]
-                    else:
-                        _cf_id = cf_id[0]
+                    _cf_id = cf_id[0]
                     cf_x, cf_y = self.dataset[_cf_id]
 
                     if cf_y == y:
